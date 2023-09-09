@@ -31,5 +31,7 @@ app.use(errorHandler);
 app.use(express.static(path.join(appRootPath.toString(), "upload")));
 
 app.listen(process.env.PORT, () => {
-  console.log(`Server is runnig on ${process.env.PORT}`);
+  console.log(
+    `Server is runnig on ${process.env.PORT} - ${process.env.NODE_ENV} Mode`
+  );
 });
