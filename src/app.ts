@@ -30,6 +30,9 @@ app.use(errorHandler);
 
 app.use(express.static(path.join(appRootPath.toString(), "upload")));
 
+//* Cleaner Script
+require("./middlewares/cleaner");
+
 app.listen(process.env.PORT, () => {
   console.log(
     `Server is runnig on ${process.env.PORT} - ${process.env.NODE_ENV} Mode`
