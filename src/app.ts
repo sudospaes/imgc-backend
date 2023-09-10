@@ -30,8 +30,8 @@ app.use(errorHandler);
 
 app.use(express.static(path.join(appRootPath.toString(), "upload")));
 
-//* Cleaner Script
-require("./middlewares/cleaner");
+//* Past Uploads Cleaner
+require("./utils/cleaner");
 
 app.listen(process.env.PORT, () => {
   console.log(
