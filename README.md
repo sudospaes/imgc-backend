@@ -13,7 +13,7 @@ Upload image :
 # Shape: FormData
 - Parameters:
   Name: image - Type: file
-  Name: quality - Type: string - Optional(If you don't send it, in server it will 60 by default) @@
+  Name: quality - Type: string - Optional(If you don't send it, in server it will 60 by default)
 + Server response: a link for getting compressed image
 ```
 Getting compressed image :
@@ -24,3 +24,5 @@ Getting compressed image :
 + Server response: image file
 @@ Request example --> your_server_adderss/imageName @@
 ```
+
+Front-End : [Click Here](https://github.com/fearlessnoob/imgc-frontend)
