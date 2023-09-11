@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx tsc",
     "start": "cross-env NODE_ENV=Production node dist/app.js",
-    "dev": "cross-env NODE_ENV=Development concurrently \"npx tsc --watch\" \"nodemon -q dist/app.js\""
+    "dev": "cross-env NODE_ENV=Development nodemon src/app.ts"
   },
   "keywords": [],
   "author": "",
@@ -27,9 +27,9 @@
     "@types/node": "^20.6.0",
     "@types/node-cron": "^3.0.8",
     "@types/uuid": "^9.0.3",
-    "concurrently": "^8.2.1",
     "cross-env": "^7.0.3",
     "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   }
 }
