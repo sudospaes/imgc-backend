@@ -1,14 +1,9 @@
-import fs from "fs";
+import fs from "fs/promises";
 import cron from "node-cron";
 
 function removeImageAfter1min(filePath: string) {
   const job = cron.schedule("*/1 * * * *", () => {
-    fs.unlink(filePath, (err) => {
-      if (err) {
-        job.stop();
-      }
-    });
-    job.stop();
+    fs.unlink(filePath).catch(() => job.stop());
   });
   job.start();
 }
