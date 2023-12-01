@@ -7,15 +7,14 @@ import sharp from "sharp";
 import { v4 as uuid } from "uuid";
 import appRootPath from "app-root-path";
 
-import { imageSchema } from "../models/validattion";
+import { imageSchema } from "../models/validation";
 import { removeImageAfter1min } from "../jobs/jobs";
 
 const getImage = (req: Request, res: Response, next: NextFunction) => {
-  if (
-    fs.existsSync(
-      path.join(appRootPath.toString(), "uploads", req.params.imageName)
-    )
-  ) {
+  const existStatus: boolean = fs.existsSync(
+    path.join(appRootPath.toString(), "uploads", req.params.imageName)
+  );
+  if (existStatus) {
     res
       .status(200)
       .sendFile(
