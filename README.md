@@ -25,4 +25,4 @@ Getting compressed image :
 @@ Request example --> your_server_adderss/imageName @@
 ```
 
-Front-End : [Click Here](https://github.com/fearlessnoob/imgc-frontend)
+Front-End : [Click Here](https://github.com/sudospaes/imgc-frontend)
