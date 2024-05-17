@@ -33,8 +33,8 @@ app.use(express.static(path.join(appRootPath.toString(), "upload")));
 //* Past Uploads Cleaner
 require("./utils/cleaner");
 
-app.listen(process.env.PORT, () => {
+app.listen(3000, () => {
   console.log(
-    `Server is runnig on ${process.env.PORT} - ${process.env.NODE_ENV} Mode`
+    `Server is runnig...`
   );
 });
