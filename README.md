@@ -1,28 +1,25 @@
-# Image Compressor - Backend with ExpressJS
+## Preparation for developing :
 
-Build and run :
+1 - Install packages.
+
 ```bash
 npm i
+```
+
+2 - Make a build from project for the first time.
+
+```bash
 npm run build
-npm start or npm run dev
 ```
 
-Upload image :
-```diff
-! Method: POST
-# Shape: FormData
-- Parameters:
-  Name: image - Type: file
-  Name: quality - Type: string - Optional(If you don't send it, in server it will 60 by default)
-+ Server response: a link for getting compressed image
-```
-Getting compressed image :
-```diff
-! Method: GET
-# Shape: URL Parameter
-- Request parameter: imageName
-+ Server response: image file
-@@ Request example --> your_server_adderss/imageName @@
+3 - From now on.
+
+```bash
+npm run dev
 ```
 
-Front-End : [Click Here](https://github.com/sudospaes/imgc-frontend)
+## Run for production :
+
+```bash
+npm start
+```

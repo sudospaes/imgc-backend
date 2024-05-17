@@ -1,14 +1,14 @@
-import { Response, NextFunction, Request } from "express";
+import { Request, Response, NextFunction } from "express";
 
-const errorHandler = (
+function errorHandler(
   error: any,
   req: Request,
   res: Response,
   next: NextFunction
-) => {
+) {
   const status: number = error.statusCode || 500;
   const message: string = error.message;
   res.status(status).json({ message });
-};
+}
 
 export default errorHandler;

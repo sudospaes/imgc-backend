@@ -1,15 +1,15 @@
 import { Router, Request, Response } from "express";
 
-import controller from "../controllers/controller";
+import { upload, getImage } from "../controllers/controller.js";
 
 const router = Router();
 
-router.get("/", (req: Request, res: Response) => {
-  res.status(201).json({ message: "Hello my sweetie" });
+router.get("/api/", (req: Request, res: Response) => {
+  res.status(201).json("Hello my sweetie");
 });
 
-router.get("/:imageName", controller.getImage);
+router.get("/api/:imageName", getImage);
 
-router.post("/upload", controller.uploadImage);
+router.post("/api/upload", upload);
 
 export default router;

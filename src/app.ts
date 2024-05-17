@@ -1,40 +1,23 @@
-import path from "path";
+import "./utils/purge.js";
 
 import express from "express";
-import expressFileUpload from "express-fileupload";
-import dotenv from "dotenv";
-import appRootPath from "app-root-path";
+import fileUpload from "express-fileupload";
 
-import router from "./routes/router";
-import errorHandler from "./middlewares/errors";
-import headers from "./middlewares/headers";
-
-dotenv.config({ path: "./configs/config.env" });
+import router from "./routes/router.js";
+import headers from "./utils/header.js";
+import errorHandler from "./utils/errors.js";
 
 const app = express();
 
+app.use(express.urlencoded({ extended: true }), fileUpload());
+
 app.disable("x-powered-by");
 
-//* Middlewares
-app.use(express.urlencoded({ extended: false }));
-app.use(expressFileUpload());
-
-//? Headers
-app.use(headers);
-
-//* Router
 app.use(router);
 
-//! Error Handling
+app.use(headers);
 app.use(errorHandler);
 
-app.use(express.static(path.join(appRootPath.toString(), "upload")));
-
-//* Past Uploads Cleaner
-require("./utils/cleaner");
-
 app.listen(3000, () => {
-  console.log(
-    `Server is runnig...`
-  );
+  console.log("Server is runnnig...");
 });
